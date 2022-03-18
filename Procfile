@@ -1,1 +1,1 @@
-web : gunicorn "delivery:app.py:create_app()"
+web : gunicorn delivery/app:create_app()
