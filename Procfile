@@ -1,1 +1,1 @@
-web: "gunicorn C:\Users\rafae\Desktop\code\delivery\delivery\app.py:create_app()"
+web: waitress-serve --port=$PORT delivery:app:create_app()
