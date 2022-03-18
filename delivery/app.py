@@ -1,10 +1,16 @@
 from flask import Flask
+from delivery.ext import site
 
-def red(filename):
-    return [req.strip() for req in open(filename).readlines()]
-
+# 3. Inicia os blueprints
 
 def create_app():
     app = Flask(__name__)
+    site.init_app(app)
     return app
-    
+
+
+
+
+
+
+
