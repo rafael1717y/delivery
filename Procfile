@@ -1,1 +1,1 @@
-web: "gunicorn app:create_app()"
+web: "gunicorn C:\Users\rafae\Desktop\code\delivery\delivery\app.py:create_app()"
