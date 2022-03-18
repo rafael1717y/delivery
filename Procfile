@@ -1,0 +1,1 @@
+web : gunicorn "delivery:create_app()"
