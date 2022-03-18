@@ -6,7 +6,7 @@ def test_app_is_created(app):
 
 
 def test_config_is_loaded(config):
-    assert config["DEBUG"] is False
+    assert config["DEBUG"] is True
 
 
 def test_request_returns_404(client):
