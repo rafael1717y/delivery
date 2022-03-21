@@ -1,13 +1,17 @@
+from distutils.command.config import config
 from flask import Flask
+
 from delivery.ext import site
-from waitress import serve
+from delivery.ext import config
+from delivery.ext import toolbar
 
 # 3. Inicia os blueprints
 
 def create_app():
     app = Flask(__name__)
-    site.init_app(app)
-    serve(app, host='0.0.0.0', port=5000)
+    config.init_app(app)
+    toolbar.init_app(app)
+    site.init_app(app)    
     return app
 
 
