@@ -1,5 +1,6 @@
 def init_app(app):
     app.config['SECRET_KEY'] = "ahahdjfh19"
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///delivery.db'
     #app.config['DEBUG'] = True
 
     if app.debug:
