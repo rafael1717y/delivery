@@ -1,0 +1,6 @@
+CREATE TABLE todo (
+--  nome tipo opções da coluna
+    id INTEGER PRIMARY KEY, 
+    tarefa TEXT NOT NULL,
+    done INTEGER NOT NULL
+);
