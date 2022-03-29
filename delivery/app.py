@@ -6,6 +6,7 @@ from delivery.ext import config
 from delivery.ext import toolbar
 from delivery.ext import db
 from delivery.ext import cli
+
 # 3. Inicia os blueprints
 
 def create_app():
@@ -16,10 +17,4 @@ def create_app():
     toolbar.init_app(app)
     site.init_app(app)    
     return app
-
-
-
-
-
-
 

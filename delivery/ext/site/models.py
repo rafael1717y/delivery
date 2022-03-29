@@ -9,6 +9,9 @@ class User(db.Model):
     passwd = db.Column('passwd', db.Unicode)
     admin = db.Column('admin', db.Boolean)
 
+    def __repr__(self):
+        return self.email
+
 
 class Category(db.Model):
     __tablename__ = "category"
