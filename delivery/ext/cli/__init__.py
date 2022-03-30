@@ -1,6 +1,6 @@
 import click
 from delivery.ext.db import db
-from delivery.ext.site import models
+from delivery.ext.db import models
 
 
 
@@ -39,4 +39,5 @@ def init_app(app):
 
     @app.cli.command()
     def listar_usuarios():
-        click.echo('lista de usuarios')
+        users = models.User.query.all()
+        click.echo(f'lista de usuarios {users}')
