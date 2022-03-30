@@ -1,6 +1,6 @@
 import click
 from delivery.ext.db import db
-from delivery.ext.db import models
+from delivery.ext.db import models # no qa
 
 
 
@@ -12,24 +12,7 @@ def init_app(app):
         db.create_all()  #try/except dps
 
 
-    # Estrutura de um comando. Registrando três capturas da linha de comando.
-    @app.cli.command()
-    @click.option("--email", "-e")
-    @click.option('--passwd', '-p')
-    @click.option('--admin', '-a', is_flag=True, default=False)
-    def add_user(email, passwd, admin):
-        """Adiciona novo usuario"""
-        user = models.User(
-            email=email,
-            passwd=passwd,
-            admin=admin
-        )
-        db.session.add(user)
-        # TODO: tratar erros09. 
-        db.session.commit()
-
-        click.echo(f'Usuário {email} criado com sucesso!!!')
-
+    
 
     @app.cli.command()
     def listar_pedidos():
@@ -37,7 +20,3 @@ def init_app(app):
         click.echo("lista de pedidos")
 
 
-    @app.cli.command()
-    def listar_usuarios():
-        users = models.User.query.all()
-        click.echo(f'lista de usuarios {users}')
