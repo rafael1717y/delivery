@@ -32,8 +32,9 @@ jobs:
 
     - name: Database Migrations
       run:
-        flask create_db
-        flask upgrade
+        FLASK_APP=delivery/app.py
+        flask create-db
+        flask db upgrade
 
     - name: Test with pytest
       run: |
